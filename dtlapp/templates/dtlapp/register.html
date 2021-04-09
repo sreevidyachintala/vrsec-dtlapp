@@ -1,0 +1,41 @@
+{% extends 'dtlapp/base.html' %}
+
+{% block title %}Register{% endblock %}
+
+
+{% block content %}
+<div class="container  mt-3 col-md-6">
+	{% if messages %}
+	{% for i in messages %}
+	<div class="alert alert-{{i.tags}} alert-dismissible">
+  			<button type="button" class="close" data-dismiss="alert">&times;</button>
+  			{{i}}
+  			
+		</div>
+	{% endfor %}
+	{% endif %}
+
+	<div class="card">
+		<div class="card-header bg-secondary ">
+			<h2>Register Here</h2>
+			
+		</div>
+		<div class="card-body">
+			<form method="POST">
+				{% csrf_token %}
+				{{form.as_p}}
+				
+				<div class="form-group">
+					<input type="submit" value="Register" class="btn btn-outline-success">
+					
+				</div>
+			</form>
+				
+			
+		</div>
+		
+	</div>
+	
+</div>
+
+{% endblock %}

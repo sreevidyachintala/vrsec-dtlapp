@@ -1,0 +1,14 @@
+{% extends 'dtlapp/base.html' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="jumbotron mt-5 col-md-5 text-center text-success">
+		<h2>welcome {{request.user.username}}</h2>
+	
+	</div>
+	
+</div>
+
+{% endblock %}
